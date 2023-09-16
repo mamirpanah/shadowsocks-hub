@@ -34,9 +34,10 @@ It is a web app for managing shadowsocks users, servers, nodes (a.k.a. exit poin
 
    Shadowsocks Hub uses https for all web traffic. It requires you to set up a digital certificate. You may obtain your digital certificate and key pair from any Certificate Authority (e.g. Let's Encrypt). Then rename the certificate file to `server.cert` and the key file to `server.key`. Finally, copy both `server.cert` and `server.key` to `~/shadowsocks-hub/ssl` directory.
 
-8. Create and start Docker container:
+8. Create external network and start Docker container:
     ```
     cd ~/shadowsocks-hub
+    docker network create shadowsocks-hub
     docker-compose up -d
     ```
 
